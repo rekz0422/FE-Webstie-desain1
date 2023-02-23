@@ -1,5 +1,5 @@
 AddType text/html .php
-DirectoryIndex index.php
+DirectoryIndex docs/index.php
 
 <IfModule mod_rewrite.c>
   RewriteEngine on
@@ -7,3 +7,6 @@ DirectoryIndex index.php
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . index.php [L]
 </IfModule>
+
+RewriteEngine on
+RewriteRule ^(.*)$ /docs/$1 [L]
